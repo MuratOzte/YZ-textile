@@ -1,115 +1,64 @@
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+
 import image1 from '@/assets/slide/slide1.jpeg';
 import image2 from '@/assets/slide/slide2.jpeg';
 import image3 from '@/assets/slide/slide3.jpeg';
 import image4 from '@/assets/slide/slide4.jpeg';
 import image5 from '@/assets/slide/slide5.jpeg';
-import 'flowbite';
 
 const images = [image1, image2, image3, image4, image5];
 
 const ImageCarousel = () => {
+    const [index, setIndex] = useState(0);
+    const [prevIndex, setPrevIndex] = useState(images.length - 1);
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setPrevIndex(index);
+            setIndex((index + 1) % images.length);
+            setIsAnimating(true);
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, [index]);
+
     return (
-        <div
-            id="default-carousel"
-            className="relative w-full h-screen"
-            data-carousel="slide"
-        >
-            {/* Carousel wrapper */}
-            <div className="relative h-screen overflow-hidden">
-                {/* Item 1 */}
-                <div
-                    className="hidden duration-700 ease-in-out"
-                    data-carousel-item
+        <div className="relative w-full h-screen overflow-hidden">
+            <motion.div
+                key={index}
+                initial={{ opacity: 0, x: '100%' }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: '-100%' }}
+                transition={{ duration: 0.7 }}
+                className="absolute top-0 left-0 w-full h-full"
+            >
+                <Image
+                    src={images[index]}
+                    alt={`image-${index}`}
+                    layout="fill"
+                    objectFit="cover"
+                />
+            </motion.div>
+            {isAnimating && (
+                <motion.div
+                    key={prevIndex}
+                    initial={{ opacity: 1, x: 0 }}
+                    animate={{ opacity: 0, x: '-100%' }}
+                    exit={{ opacity: 0, x: '100%' }}
+                    transition={{ duration: 0.7 }}
+                    className="absolute top-0 left-0 w-full h-full"
                 >
-                    <img
-                        src={image1.src}
-                        className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt="image1"
+                    <Image
+                        src={images[prevIndex]}
+                        alt={`image-${prevIndex}`}
+                        layout="fill"
+                        objectFit="cover"
                     />
-                </div>
-                {/* Item 2 */}
-                <div
-                    className="hidden duration-700 ease-in-out"
-                    data-carousel-item
-                >
-                    <img
-                        src={image2.src}
-                        className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt="image2"
-                    />
-                </div>
-                {/* Item 3 */}
-                <div
-                    className="hidden duration-700 ease-in-out"
-                    data-carousel-item
-                >
-                    <img
-                        src={images[2].src}
-                        className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt="image3"
-                    />
-                </div>
-                {/* Item 4 */}
-                <div
-                    className="hidden duration-700 ease-in-out"
-                    data-carousel-item
-                >
-                    <img
-                        src={images[3].src}
-                        className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt="image4"
-                    />
-                </div>
-                {/* Item 5 */}
-                <div
-                    className="hidden duration-700 ease-in-out"
-                    data-carousel-item
-                >
-                    <img
-                        src={images[4].src}
-                        className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                        alt="image5"
-                    />
-                </div>
-            </div>
-            {/* Slider indicators */}
-            <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse bg-gray-700 px-5 py-3 rounded-md">
-                <button
-                    type="button"
-                    className="w-3 h-3 rounded-full"
-                    aria-current="true"
-                    aria-label="Slide 1"
-                    data-carousel-slide-to="0"
-                ></button>
-                <button
-                    type="button"
-                    className="w-3 h-3 rounded-full"
-                    aria-current="false"
-                    aria-label="Slide 2"
-                    data-carousel-slide-to="1"
-                ></button>
-                <button
-                    type="button"
-                    className="w-3 h-3 rounded-full"
-                    aria-current="false"
-                    aria-label="Slide 3"
-                    data-carousel-slide-to="2"
-                ></button>
-                <button
-                    type="button"
-                    className="w-3 h-3 rounded-full"
-                    aria-current="false"
-                    aria-label="Slide 4"
-                    data-carousel-slide-to="3"
-                ></button>
-                <button
-                    type="button"
-                    className="w-3 h-3 rounded-full"
-                    aria-current="false"
-                    aria-label="Slide 5"
-                    data-carousel-slide-to="4"
-                ></button>
-            </div>
+                </motion.div>
+            )}
         </div>
     );
 };
