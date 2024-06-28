@@ -15,7 +15,10 @@ const ImageCarousel = () => {
     const [prevIndex, setPrevIndex] = useState(images.length - 1);
     const [isAnimating, setIsAnimating] = useState(false);
 
+    const [isInit, setIsInit] = useState(false);
+
     useEffect(() => {
+        setIsInit(true);
         const interval = setInterval(() => {
             setPrevIndex(index);
             setIndex((index + 1) % images.length);
@@ -29,10 +32,10 @@ const ImageCarousel = () => {
         <div className="relative w-full h-screen overflow-hidden">
             <motion.div
                 key={index}
-                initial={{ opacity: 0, x: '100%' }}
+                initial={{ opacity: 0, x: isInit ? '100%' : 0 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: '-100%' }}
-                transition={{ duration: 0.7 }}
+                transition={{ duration: 0.6 }}
                 className="absolute top-0 left-0 w-full h-full"
             >
                 <Image
@@ -48,7 +51,7 @@ const ImageCarousel = () => {
                     initial={{ opacity: 1, x: 0 }}
                     animate={{ opacity: 0, x: '-100%' }}
                     exit={{ opacity: 0, x: '100%' }}
-                    transition={{ duration: 0.7 }}
+                    transition={{ duration: 0.6 }}
                     className="absolute top-0 left-0 w-full h-full"
                 >
                     <Image
