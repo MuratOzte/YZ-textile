@@ -1,5 +1,3 @@
-import './Carousel.css';
-
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
@@ -32,7 +30,7 @@ const ImageCarousel = () => {
     }, [index]);
 
     return (
-        <div className="relative w-full h-screen overflow-hidden">
+        <div className="relative w-full h-[calc(100vh-64px)] overflow-hidden">
             <HeroMain />
             <div className="absolute top-0 left-0 w-full h-full">
                 {/* Transparent linear gradient */}
@@ -44,7 +42,6 @@ const ImageCarousel = () => {
                         zIndex: 1,
                     }}
                 ></div>
-
                 {/* Image carousel */}
                 <motion.div
                     key={index}
