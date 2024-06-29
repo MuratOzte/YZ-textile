@@ -1,4 +1,5 @@
 'use client';
+import About from '@/components/About/About';
 import Nav from '@/components/Nav/Nav';
 import ImageCarousel from '@/components/Slide/ImageCarousel';
 
@@ -7,6 +8,7 @@ export default function Home() {
         <>
             <Nav />
             <ImageCarousel />
+            <About />
         </>
     );
 }
