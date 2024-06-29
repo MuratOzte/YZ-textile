@@ -5,10 +5,12 @@ const Nav = () => {
                 <span className="font-bold">YZ</span>
                 <span>Textile</span>
             </div>
-            <ul className="flex">
-                <li>a</li>
-                <li>b</li>
-                <li>c</li>
+            <ul className="flex gap-8 font-semibold text-gray-900">
+                <li>About</li>
+                <li>Services & Processes</li>
+                <li>Customers</li>
+                <li>Sustainability</li>
+                <li>Contact </li>
             </ul>
         </nav>
     );
