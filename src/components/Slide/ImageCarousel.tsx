@@ -1,3 +1,5 @@
+import './Carousel.css';
+
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
@@ -34,7 +36,14 @@ const ImageCarousel = () => {
             <HeroMain />
             <div className="absolute top-0 left-0 w-full h-full">
                 {/* Transparent linear gradient */}
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-white"></div>
+                <div
+                    className="absolute top-0 left-0 w-full h-full"
+                    style={{
+                        background:
+                            'linear-gradient(0deg, rgba(0, 0, 0, 0) 90%, rgba(255,255, 255, 1) 100%)',
+                        zIndex: 1,
+                    }}
+                ></div>
 
                 {/* Image carousel */}
                 <motion.div
@@ -44,6 +53,7 @@ const ImageCarousel = () => {
                     exit={{ opacity: 0, x: '-100%' }}
                     transition={{ duration: 0.6 }}
                     className="absolute top-0 left-0 w-full h-full"
+                    style={{ zIndex: 0 }}
                 >
                     <Image
                         src={images[index]}
