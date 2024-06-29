@@ -11,7 +11,7 @@ const About = () => {
             transition={{ duration: 0.5 }}
             className="h-screen flex justify-center"
         >
-            <div className="flex flex-col mt-28  items-center">
+            <div className="flex flex-col mt-40  items-center">
                 <div ref={container} className="">
                     {isInView && (
                         <div>
