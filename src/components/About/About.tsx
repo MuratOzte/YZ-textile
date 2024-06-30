@@ -1,16 +1,17 @@
 import { useEffect, useRef } from 'react';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
+import Image from 'next/image';
+
+import Slide1 from '@/assets/slide/slide1.jpeg';
 
 const About = () => {
     const container = useRef(null);
     const isInView = useInView(container);
 
     return (
-        <motion.div
-            className="flex justify-center flex-col h-screen bg-white"
-        >
-            <div className="flex flex-col mt-28  items-center">
-                <div ref={container} className="">
+        <motion.div className="flex justify-center flex-col h-screen bg-white">
+            <div className="flex flex-col mt-96  items-center">
+                <div ref={container}>
                     {isInView && (
                         <div>
                             <motion.h1
@@ -34,21 +35,56 @@ const About = () => {
                 <div className="flex justify-center mt-16">
                     <AnimatePresence>
                         {isInView && (
-                            <motion.p
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: isInView ? 1 : 0 }}
-                                transition={{ duration: 1, delay: 0.8 }}
-                                className="text-slate-500 w-1/2 tracking-wider text-center text-lg"
-                            >
-                                We are high quality clothing manufacturer based
-                                in Istanbul/Turkey. We are providing
-                                high-quality service with custom cutting, custom
-                                printing & embroidery, sewing, ironing, package
-                                and quality control units. Our aim is to provide
-                                high quality service with our experienced and
-                                qualified employees to customers who have a
-                                brand or want to create a new brand
-                            </motion.p>
+                            <div className="">
+                                <div className="w-full flex justify-center items-center gap-5">
+                                    <motion.p
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: isInView ? 1 : 0 }}
+                                        transition={{ duration: 1, delay: 0.8 }}
+                                        className="text-slate-500 w-1/3 tracking-wider text-center text-lg"
+                                    >
+                                        We are high quality clothing
+                                        manufacturer based in Istanbul/Turkey.
+                                        We are providing high-quality service
+                                        with custom cutting, custom printing &
+                                        embroidery, sewing, ironing, package and
+                                        quality control units. Our aim is to
+                                        provide high quality service with our
+                                        experienced and qualified employees to
+                                        customers who have a brand or want to
+                                        create a new brand
+                                    </motion.p>
+                                    <Image
+                                        alt="image1"
+                                        src={Slide1}
+                                        width={350}
+                                    />
+                                </div>
+                                <div className="w-full flex justify-center items-center gap-5 mt-10">
+                                    <Image
+                                        alt="image1"
+                                        src={Slide1}
+                                        width={350}
+                                    />
+                                    <motion.p
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: isInView ? 1 : 0 }}
+                                        transition={{ duration: 1, delay: 0.8 }}
+                                        className="text-slate-500 w-1/3 tracking-wider text-center text-lg"
+                                    >
+                                        We are high quality clothing
+                                        manufacturer based in Istanbul/Turkey.
+                                        We are providing high-quality service
+                                        with custom cutting, custom printing &
+                                        embroidery, sewing, ironing, package and
+                                        quality control units. Our aim is to
+                                        provide high quality service with our
+                                        experienced and qualified employees to
+                                        customers who have a brand or want to
+                                        create a new brand
+                                    </motion.p>
+                                </div>
+                            </div>
                         )}
                     </AnimatePresence>
                 </div>
