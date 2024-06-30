@@ -8,10 +8,10 @@ const About = () => {
     return (
         <motion.div
             animate={{ backgroundColor: isInView ? '#000000' : '#FFFFFFF' }}
-            transition={{ duration: 0.5 }}
-            className="h-screen flex justify-center"
+            transition={{ duration: 0.5, delay: isInView ? 0 : 0.5 }}
+            className="flex justify-center flex-col h-screen"
         >
-            <div className="flex flex-col mt-40  items-center">
+            <div className="flex flex-col mt-28  items-center">
                 <div ref={container} className="">
                     {isInView && (
                         <div>
@@ -55,6 +55,39 @@ const About = () => {
                     </AnimatePresence>
                 </div>
             </div>
+            <AnimatePresence>
+                {isInView && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: isInView ? 1 : 0 }}
+                        transition={{ duration: 1, delay: 0.8 }}
+                        className="bg-black text-white flex justify-center flex-col text-center items-center gap-5 pt-28 mb-20"
+                    >
+                        <motion.h1
+                            initial={{ y: -20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 1, delay: 1.2 }}
+                            className="text-5xl"
+                        >
+                            SERVICES & PROCESSES
+                        </motion.h1>
+                        <motion.p
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 1, delay: 1.2 }}
+                            className="w-2/3 text-slate-500"
+                        >
+                            From drawing to real life… Pre-production,
+                            production process and post-production: Thanks to
+                            its experienced team in all processes from idea to
+                            packaging, it provides support to every step, so
+                            that you can run your operation quickly, reliably
+                            and smoothly without having to work with another
+                            supplier at every step.
+                        </motion.p>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </motion.div>
     );
 };
