@@ -15,14 +15,15 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-    background: black;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: white;
+    background: black;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: gainsboro;
+    background: #000000d7;
+    transition: all 0.8s ease;
 }

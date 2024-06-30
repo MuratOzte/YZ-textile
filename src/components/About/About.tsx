@@ -7,9 +7,7 @@ const About = () => {
 
     return (
         <motion.div
-            animate={{ backgroundColor: isInView ? '#000000' : '#FFFFFFF' }}
-            transition={{ duration: 0.5, delay: isInView ? 0 : 0.5 }}
-            className="flex justify-center flex-col h-screen"
+            className="flex justify-center flex-col h-screen bg-white"
         >
             <div className="flex flex-col mt-28  items-center">
                 <div ref={container} className="">
@@ -23,9 +21,9 @@ const About = () => {
                                     delay: 0.2,
                                     ease: 'easeInOut',
                                 }}
-                                className="text-white text-9xl font-mono overflow-hidden text-nowrap"
+                                className="text-black text-9xl font-mono overflow-hidden text-nowrap"
                             >
-                                <span className="bg-white p-2 text-black">
+                                <span className="bg-black p-2 text-white">
                                     YZ
                                 </span>
                                 TEXTILE
@@ -61,7 +59,7 @@ const About = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: isInView ? 1 : 0 }}
                         transition={{ duration: 1, delay: 0.8 }}
-                        className="bg-black text-white flex justify-center flex-col text-center items-center gap-5 pt-28 mb-20"
+                        className="bg-white text-black flex justify-center flex-col text-center items-center gap-5 pt-28 mb-20"
                     >
                         <motion.h1
                             initial={{ y: -20, opacity: 0 }}
