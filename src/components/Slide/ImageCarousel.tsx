@@ -30,7 +30,7 @@ const ImageCarousel = () => {
     }, [index]);
 
     return (
-        <div className="relative w-full h-[calc(100vh-64px)] overflow-hidden">
+        <div className="relative w-full h-[calc(100vh-64px)] overflow-hidden mb-32">
             <motion.div
                 initial={{ y: 0 }}
                 animate={{ y: [0, 20, 0, 20, 0] }}
