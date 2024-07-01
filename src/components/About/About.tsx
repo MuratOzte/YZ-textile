@@ -24,7 +24,7 @@ const About = () => {
     const isProcessInView = useInView(processRef);
 
     useEffect(() => {
-        if (isInit) {
+        if (isInit && isInView) {
             setIsInit(false);
         }
     }, [isInView]);
@@ -173,7 +173,7 @@ const About = () => {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ duration: 1, delay: 0.2 }}
-                                className="w-2/3 text-slate-500 text-lg"
+                                className="w-2/3 text-slate-500"
                             >
                                 From drawing to real life… Pre-production,
                                 production process and post-production: Thanks
