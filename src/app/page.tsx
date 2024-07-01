@@ -19,7 +19,8 @@ export default function Home() {
         <div className="snap-y snap-mandatory">
             <Nav />
             <ImageCarousel />
-            <About />
+            {/* <About /> */}
+            <Boxes />
         </div>
     );
 }
