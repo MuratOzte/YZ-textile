@@ -78,7 +78,7 @@ const About = () => {
                                         <motion.p
                                             initial={{ opacity: 0, x: -20 }}
                                             animate={{
-                                                opacity: isAboutInView ? 1 : 0,
+                                                opacity: 1,
                                                 x: 0,
                                             }}
                                             transition={{
@@ -95,7 +95,7 @@ const About = () => {
                                         <motion.div
                                             initial={{ opacity: 0, x: 20 }}
                                             animate={{
-                                                opacity: isAboutInView ? 1 : 0,
+                                                opacity: 1,
                                                 x: 0,
                                             }}
                                             transition={{
@@ -116,7 +116,7 @@ const About = () => {
                                         <motion.div
                                             initial={{ opacity: 0, x: -20 }}
                                             animate={{
-                                                opacity: isAboutInView ? 1 : 0,
+                                                opacity: 1,
                                                 x: 0,
                                             }}
                                             transition={{
@@ -136,7 +136,7 @@ const About = () => {
                                         <motion.p
                                             initial={{ opacity: 0, x: 20 }}
                                             animate={{
-                                                opacity: isAboutInView ? 1 : 0,
+                                                opacity: 1,
                                                 x: 0,
                                             }}
                                             transition={{
@@ -167,12 +167,7 @@ const About = () => {
             <div ref={processRef} className="pt-4">
                 <AnimatePresence>
                     {(processAnimated || isProcessInView) && (
-                        <motion.div
-                            initial={{ opacity: processAnimated ? 1 : 0}}
-                            animate={{ opacity: isProcessInView ? 1 : 0 }}
-                            transition={{ duration: 1, delay: 0.2 }}
-                            className="bg-transparent text-black flex justify-center flex-col text-center items-center gap-5 mb-20"
-                        >
+                        <div className="bg-transparent text-black flex justify-center flex-col text-center items-center gap-5 mb-20">
                             <motion.h1
                                 initial={{ y: -20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
@@ -195,7 +190,7 @@ const About = () => {
                                 quickly, reliably and smoothly without having to
                                 work with another supplier at every step.
                             </motion.p>
-                        </motion.div>
+                        </div>
                     )}
                 </AnimatePresence>
             </div>
