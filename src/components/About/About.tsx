@@ -11,14 +11,16 @@ import uiSlice from '@/store/slices/uiSlice';
 
 const About = () => {
     const [isInit, setIsInit] = useState(true);
+    const [aboutAnimated, setAboutAnimated] = useState(false);
+    const [processAnimated, setProcessAnimated] = useState(false);
     const ui = useSelector((state: RootState) => state.ui);
     const dispatch = useDispatch();
 
     const container = useRef(null);
     const isInView = useInView(container);
 
-    const aboutref = useRef(null);
-    const isAboutInView = useInView(aboutref);
+    const aboutRef = useRef(null);
+    const isAboutInView = useInView(aboutRef);
 
     const processRef = useRef(null);
     const isProcessInView = useInView(processRef);
@@ -28,6 +30,18 @@ const About = () => {
             setIsInit(false);
         }
     }, [isInView]);
+
+    useEffect(() => {
+        if (isAboutInView) {
+            setAboutAnimated(true);
+        }
+    }, [isAboutInView]);
+
+    useEffect(() => {
+        if (isProcessInView) {
+            setProcessAnimated(true);
+        }
+    }, [isProcessInView]);
 
     return (
         <div className="flex gap-20 flex-col">
@@ -56,10 +70,10 @@ const About = () => {
                             )}
                         </AnimatePresence>
                     </div>
-                    <div className="flex justify-center mt-16" ref={aboutref}>
+                    <div className="flex justify-center mt-16" ref={aboutRef}>
                         <AnimatePresence>
-                            <div>
-                                {isAboutInView && (
+                            {(aboutAnimated || isAboutInView) && (
+                                <div>
                                     <div className="w-full flex justify-center items-center gap-5">
                                         <motion.p
                                             initial={{ opacity: 0, x: -20 }}
@@ -98,8 +112,6 @@ const About = () => {
                                             />
                                         </motion.div>
                                     </div>
-                                )}
-                                {isAboutInView && (
                                     <div className="w-full flex justify-center items-center gap-5 mt-16 ">
                                         <motion.div
                                             initial={{ opacity: 0, x: -20 }}
@@ -146,17 +158,17 @@ const About = () => {
                                             brand or want to create a new brand
                                         </motion.p>
                                     </div>
-                                )}
-                            </div>
+                                </div>
+                            )}
                         </AnimatePresence>
                     </div>
                 </div>
             </motion.div>
             <div ref={processRef} className="pt-4">
                 <AnimatePresence>
-                    {isProcessInView && (
+                    {(processAnimated || isProcessInView) && (
                         <motion.div
-                            initial={{ opacity: 0 }}
+                            initial={{ opacity: processAnimated ? 1 : 0}}
                             animate={{ opacity: isProcessInView ? 1 : 0 }}
                             transition={{ duration: 1, delay: 0.2 }}
                             className="bg-transparent text-black flex justify-center flex-col text-center items-center gap-5 mb-20"
