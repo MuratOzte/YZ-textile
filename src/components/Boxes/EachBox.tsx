@@ -1,6 +1,18 @@
 import { motion } from 'framer-motion';
 
-const EachBox = ({ right = false, top = 0 }) => {
+interface EachBoxProps {
+    right?: boolean;
+    top?: number;
+    title: string;
+    description: string;
+}
+
+const EachBox: React.FC<EachBoxProps> = ({
+    right = false,
+    top = 0,
+    title,
+    description,
+}) => {
     return (
         <motion.div
             initial={{ opacity: 0, width: 0, backgroundColor: '#FFFFFF' }}
@@ -9,8 +21,8 @@ const EachBox = ({ right = false, top = 0 }) => {
             style={{ top: `${top}px` }}
             className={`absolute ${
                 right
-                    ? 'left-4 sm:left-8 md:left-16 lg:left-32'
-                    : 'right-4 sm:right-8 md:right-16 lg:right-32'
+                    ? 'left-4 sm:left-8 md:left-16 lg:left-24'
+                    : 'right-4 sm:right-8 md:right-16 lg:right-24'
             } 
             bg-black flex w-full sm:w-[200px] md:w-[300px] lg:w-[400px] h-[200px] min-w-[150px] ${
                 right ? 'origin-left' : 'origin-right'
@@ -23,8 +35,8 @@ const EachBox = ({ right = false, top = 0 }) => {
             )}
 
             <div className="text-white">
-                <h1>Title</h1>
-                <p>Description</p>
+                <h1>{title}</h1>
+                <p>{description}</p>
             </div>
         </motion.div>
     );
