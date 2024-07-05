@@ -9,6 +9,8 @@ const Boxes = () => {
         first: false,
         second: false,
         third: false,
+        fourth: false,
+        fifth: false,
     });
 
     useEffect(() => {
@@ -26,6 +28,12 @@ const Boxes = () => {
         }
         if (scrollPosition > 2100 && !isViewed.third) {
             setIsViewed({ ...isViewed, third: true });
+        }
+        if (scrollPosition > 2400 && !isViewed.fourth) {
+            setIsViewed({ ...isViewed, fourth: true });
+        }
+        if (scrollPosition > 2700 && !isViewed.fifth) {
+            setIsViewed({ ...isViewed, fifth: true });
         }
     }, [scrollPosition]);
 
@@ -57,6 +65,20 @@ const Boxes = () => {
                             )}
                             {(scrollPosition > 2100 || isViewed.third) && (
                                 <EachBox right={true} top={600} key={'item3'} />
+                            )}
+                            {(scrollPosition > 2400 || isViewed.fourth) && (
+                                <EachBox
+                                    right={false}
+                                    top={900}
+                                    key={'item4'}
+                                />
+                            )}
+                            {(scrollPosition > 2700 || isViewed.fifth) && (
+                                <EachBox
+                                    right={true}
+                                    top={1200}
+                                    key={'item5'}
+                                />
                             )}
                         </AnimatePresence>
                     </div>

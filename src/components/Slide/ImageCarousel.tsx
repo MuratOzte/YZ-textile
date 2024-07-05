@@ -75,8 +75,10 @@ const ImageCarousel = () => {
                     <Image
                         src={images[index]}
                         alt={`image-${index}`}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        priority
+                        fetchPriority='high'
+                        className="object-cover"
                     />
                 </motion.div>
                 {isAnimating && (
@@ -91,8 +93,8 @@ const ImageCarousel = () => {
                         <Image
                             src={images[prevIndex]}
                             alt={`image-${prevIndex}`}
-                            layout="fill"
-                            objectFit="cover"
+                            fill
+                            className="object-cover"
                         />
                     </motion.div>
                 )}
