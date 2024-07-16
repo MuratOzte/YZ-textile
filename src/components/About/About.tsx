@@ -49,7 +49,7 @@ const About = () => {
                 <div className="flex flex-col items-center">
                     <div ref={container}>
                         <AnimatePresence>
-                            {isInView && (
+                            {(isInView || aboutAnimated) && (
                                 <div>
                                     <motion.h1
                                         initial={{ width: isInit ? 0 : '100%' }}
