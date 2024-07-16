@@ -1,9 +1,12 @@
-import DesingSVG from './icons/Design';
-import Logistics from './icons/Logistics';
-import Manifacturing from './icons/Manifacturing';
-import Production from './icons/Production';
-import Quality from './icons/Quality';
-import Sampling from './icons/Sampling';
+import {
+    DesingSVG,
+    Logistics,
+    Manifacturing,
+    Production,
+    Quality,
+    Sampling,
+} from './icons';
+
 
 const NewBoxes = () => {
     return (
@@ -19,9 +22,9 @@ const NewBoxes = () => {
                         complete collections. For those needing design
                         assistance, our dedicated team provides expert support.
                     </div>
-                    <div className='absolute w-10 h-4' />
+                    <div className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] -right-24 origin-left" />
                 </div>
-                <div className="w-3/12 h-[320px] bg-gray-200 rounded-md">
+                <div className="w-3/12 h-[320px] bg-gray-200 rounded-md relative">
                     <div className="flex items-center justify-center pt-8 gap-5 text-xl font-bold uppercase font-sans text-gray-800">
                         <Sampling />
                         <h1>Sampling</h1>
@@ -31,6 +34,7 @@ const NewBoxes = () => {
                         customers' designs. Also for our customers who require
                         design support, we assist with our design team.
                     </div>
+                    <div className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] -right-24 origin-left" />
                 </div>
                 <div className="w-3/12 h-[320px] bg-gray-300 rounded-md">
                     <div className="flex items-center  justify-center pt-8 text-xl font-bold uppercase font-sans text-gray-800">
@@ -54,7 +58,7 @@ const NewBoxes = () => {
             </div>
             {/*second row*/}
             <div className="flex justify-evenly w-full mt-16">
-                <div className="w-3/12 h-[320px] bg-gray-300 rounded-md">
+                <div className="w-3/12 h-[320px] bg-gray-300 rounded-md relative">
                     <div className="flex items-center justify-center pt-8 gap-5 text-xl font-bold uppercase font-sans text-gray-800">
                         <Production />
                         <h1>Production</h1>
@@ -67,8 +71,9 @@ const NewBoxes = () => {
                         printing, embroidery, and personalized labels and
                         packaging.
                     </div>
+                    <div className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] -right-24 origin-right" />
                 </div>
-                <div className="w-3/12 h-[320px] bg-gray-200 rounded-md">
+                <div className="w-3/12 h-[320px] bg-gray-200 rounded-md relative">
                     <div className="flex items-center justify-center pt-8 gap-5 text-xl font-bold uppercase font-sans text-gray-800">
                         <Quality />
                         <h1>Quality Control</h1>
@@ -79,8 +84,9 @@ const NewBoxes = () => {
                         ensure adherence to our clients' specifications and
                         standards.
                     </div>
+                    <div className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] -right-24 origin-left" />
                 </div>
-                <div className="w-3/12 h-[320px] bg-gray-300 rounded-md">
+                <div className="w-3/12 h-[320px] bg-gray-300 rounded-md relative">
                     <div className="flex items-center justify-center pt-8 gap-5 text-xl font-bold uppercase font-sans text-gray-800">
                         <Logistics />
                         Logistics
@@ -92,6 +98,7 @@ const NewBoxes = () => {
                         logistics support allows seamless management of the
                         entire production cycle from a single source.
                     </div>
+                    <div className="absolute w-[6px] h-16 shadow-lg  bg-slate-300 left-[50%] -top-16 origin-left" />
                 </div>
             </div>
         </div>
