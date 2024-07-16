@@ -25,7 +25,7 @@ const NewBoxes = () => {
                             ? { opacity: 1, scale: 1 }
                             : { opacity: 0, scale: 0.9 }
                     }
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.8 }}
                     className="w-3/12 h-[320px] bg-gray-300 rounded-md relative"
                 >
                     <div className="flex items-center justify-center pt-8 gap-5 text-xl font-bold uppercase font-sans text-gray-800">
@@ -40,7 +40,7 @@ const NewBoxes = () => {
                     <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: isInView ? 96 : 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
+                        transition={{ duration: 0.8, delay: 0.1 }}
                         className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] left-[380px] origin-center"
                     />
                 </motion.div>
@@ -51,7 +51,7 @@ const NewBoxes = () => {
                             ? { opacity: 1, scale: 1 }
                             : { opacity: 0, scale: 0.9 }
                     }
-                    transition={{ duration: 0.5, delay: 0.15 }}
+                    transition={{ duration: 0.8, delay: 0.15 }}
                     className="w-3/12 h-[320px] bg-gray-200 rounded-md relative"
                 >
                     <div className="flex items-center justify-center pt-8 gap-5 text-xl font-bold uppercase font-sans text-gray-800">
@@ -66,11 +66,20 @@ const NewBoxes = () => {
                     <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: isInView ? 96 : 0 }}
-                        transition={{ duration: 0.5, delay: 0.20 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
                         className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] left-[380px] origin-center"
                     />
                 </motion.div>
-                <div className="w-3/12 h-[320px] bg-gray-300 rounded-md">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={
+                        isInView && !isAnimated
+                            ? { opacity: 1, scale: 1 }
+                            : { opacity: 0, scale: 0.9 }
+                    }
+                    transition={{ duration: 0.8, delay: 0.25 }}
+                    className="w-3/12 h-[320px] bg-gray-300 rounded-md relative"
+                >
                     <div className="flex items-center  justify-center pt-8 text-xl font-bold uppercase font-sans text-gray-800">
                         <div className="pl-2 pr-2 w-14 h-14">
                             <Manifacturing />
@@ -88,11 +97,26 @@ const NewBoxes = () => {
                         sourcing from Turkey even for those not seeking contract
                         sewing services.
                     </div>
-                </div>
+                    <motion.div
+                        initial={{ height: 0 }}
+                        animate={{ height: isInView ? 64 : 0 }}
+                        transition={{ duration: 0.8, delay: 0.35 }}
+                        className="absolute w-[6px] shadow-lg bg-slate-300 left-[50%] -bottom-16 origin-top"
+                    />
+                </motion.div>
             </div>
             {/*second row*/}
             <div className="flex justify-evenly w-full mt-16">
-                <div className="w-3/12 h-[320px] bg-gray-200 rounded-md relative">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={
+                        isInView && !isAnimated
+                            ? { opacity: 1, scale: 1 }
+                            : { opacity: 0, scale: 0.9 }
+                    }
+                    transition={{ duration: 0.8, delay: 0.55 }}
+                    className="w-3/12 h-[320px] bg-gray-200 rounded-md relative"
+                >
                     <div className="flex items-center justify-center pt-8 gap-5 text-xl font-bold uppercase font-sans text-gray-800">
                         <Quality />
                         <h1>Quality Control</h1>
@@ -103,9 +127,27 @@ const NewBoxes = () => {
                         ensure adherence to our clients' specifications and
                         standards.
                     </div>
-                    <div className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] -right-24 origin-left" />
-                </div>
-                <div className="w-3/12 h-[320px] bg-gray-300 rounded-md relative">
+                    <motion.div
+                        initial={{ opacity: 0, width: 0 }}
+                        animate={
+                            isInView && !isAnimated
+                                ? { opacity: 1, width: 96 }
+                                : { opacity: 0, width: 0 }
+                        }
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        className="absolute w-24 h-[6px] shadow-lg bg-slate-300 top-[50%] -right-24 origin-right"
+                    />
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={
+                        isInView && !isAnimated
+                            ? { opacity: 1, scale: 1 }
+                            : { opacity: 0, scale: 0.9 }
+                    }
+                    transition={{ duration: 0.8, delay: 0.45 }}
+                    className="w-3/12 h-[320px] bg-gray-300 rounded-md relative"
+                >
                     <div className="flex items-center justify-center pt-8 gap-5 text-xl font-bold uppercase font-sans text-gray-800">
                         <Production />
                         <h1>Production</h1>
@@ -118,10 +160,24 @@ const NewBoxes = () => {
                         printing, embroidery, and personalized labels and
                         packaging.
                     </div>
-                    <div className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] -right-24 origin-right" />
-                </div>
+                    <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: isInView ? 96 : 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] -right-24 origin-center"
+                    />
+                </motion.div>
 
-                <div className="w-3/12 h-[320px] bg-gray-300 rounded-md relative">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={
+                        isInView && !isAnimated
+                            ? { opacity: 1, scale: 1 }
+                            : { opacity: 0, scale: 0.9 }
+                    }
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    className="w-3/12 h-[320px] bg-gray-300 rounded-md relative"
+                >
                     <div className="flex items-center justify-center pt-8 gap-5 text-xl font-bold uppercase font-sans text-gray-800">
                         <Logistics />
                         Logistics
@@ -133,8 +189,7 @@ const NewBoxes = () => {
                         logistics support allows seamless management of the
                         entire production cycle from a single source.
                     </div>
-                    <div className="absolute w-[6px] h-16 shadow-lg  bg-slate-300 left-[50%] -top-16 origin-left" />
-                </div>
+                </motion.div>
             </div>
         </div>
     );
