@@ -1,6 +1,7 @@
 'use client';
 import About from '@/components/About/About';
 import Boxes from '@/components/Boxes/Boxes';
+import NewBoxes from '@/components/Boxes/NewBoxes';
 import Nav from '@/components/Nav/Nav';
 import ImageCarousel from '@/components/Slide/ImageCarousel';
 import { useEffect } from 'react';
@@ -11,7 +12,8 @@ export default function Home() {
             <Nav />
             <ImageCarousel />
             <About />
-            <Boxes />
+            {/* <Boxes /> */}
+            <NewBoxes />
         </>
     );
 }
