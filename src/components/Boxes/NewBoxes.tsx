@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react';
 import {
     DesingSVG,
     Logistics,
@@ -7,12 +8,26 @@ import {
     Sampling,
 } from './icons';
 
+import { motion, useInView } from 'framer-motion';
 
 const NewBoxes = () => {
+    const [isAnimated, setIsAnimated] = useState(false);
+    const ref = useRef(null);
+    const isInView = useInView(ref);
+
     return (
-        <div>
+        <div ref={ref}>
             <div className="flex justify-evenly w-full">
-                <div className="w-3/12 h-[320px] bg-gray-300 rounded-md relative">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={
+                        isInView && !isAnimated
+                            ? { opacity: 1, scale: 1 }
+                            : { opacity: 0, scale: 0.9 }
+                    }
+                    transition={{ duration: 0.5 }}
+                    className="w-3/12 h-[320px] bg-gray-300 rounded-md relative"
+                >
                     <div className="flex items-center justify-center pt-8 gap-5 text-xl font-bold uppercase font-sans text-gray-800">
                         <DesingSVG />
                         <h1>Design</h1>
@@ -22,9 +37,23 @@ const NewBoxes = () => {
                         complete collections. For those needing design
                         assistance, our dedicated team provides expert support.
                     </div>
-                    <div className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] -right-24 origin-left" />
-                </div>
-                <div className="w-3/12 h-[320px] bg-gray-200 rounded-md relative">
+                    <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: isInView ? 96 : 0 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] left-[380px] origin-center"
+                    />
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={
+                        isInView && !isAnimated
+                            ? { opacity: 1, scale: 1 }
+                            : { opacity: 0, scale: 0.9 }
+                    }
+                    transition={{ duration: 0.5, delay: 0.15 }}
+                    className="w-3/12 h-[320px] bg-gray-200 rounded-md relative"
+                >
                     <div className="flex items-center justify-center pt-8 gap-5 text-xl font-bold uppercase font-sans text-gray-800">
                         <Sampling />
                         <h1>Sampling</h1>
@@ -34,8 +63,13 @@ const NewBoxes = () => {
                         customers' designs. Also for our customers who require
                         design support, we assist with our design team.
                     </div>
-                    <div className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] -right-24 origin-left" />
-                </div>
+                    <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: isInView ? 96 : 0 }}
+                        transition={{ duration: 0.5, delay: 0.20 }}
+                        className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] left-[380px] origin-center"
+                    />
+                </motion.div>
                 <div className="w-3/12 h-[320px] bg-gray-300 rounded-md">
                     <div className="flex items-center  justify-center pt-8 text-xl font-bold uppercase font-sans text-gray-800">
                         <div className="pl-2 pr-2 w-14 h-14">
@@ -58,6 +92,19 @@ const NewBoxes = () => {
             </div>
             {/*second row*/}
             <div className="flex justify-evenly w-full mt-16">
+                <div className="w-3/12 h-[320px] bg-gray-200 rounded-md relative">
+                    <div className="flex items-center justify-center pt-8 gap-5 text-xl font-bold uppercase font-sans text-gray-800">
+                        <Quality />
+                        <h1>Quality Control</h1>
+                    </div>
+                    <div className="mt-12 mx-5 ml-8 text-gray-600 text-center">
+                        Post-production, our in-house inspectors meticulously
+                        scrutinize sewing, ironing, and packaging stages to
+                        ensure adherence to our clients' specifications and
+                        standards.
+                    </div>
+                    <div className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] -right-24 origin-left" />
+                </div>
                 <div className="w-3/12 h-[320px] bg-gray-300 rounded-md relative">
                     <div className="flex items-center justify-center pt-8 gap-5 text-xl font-bold uppercase font-sans text-gray-800">
                         <Production />
@@ -73,19 +120,7 @@ const NewBoxes = () => {
                     </div>
                     <div className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] -right-24 origin-right" />
                 </div>
-                <div className="w-3/12 h-[320px] bg-gray-200 rounded-md relative">
-                    <div className="flex items-center justify-center pt-8 gap-5 text-xl font-bold uppercase font-sans text-gray-800">
-                        <Quality />
-                        <h1>Quality Control</h1>
-                    </div>
-                    <div className="mt-12 mx-5 ml-8 text-gray-600 text-center">
-                        Post-production, our in-house inspectors meticulously
-                        scrutinize sewing, ironing, and packaging stages to
-                        ensure adherence to our clients' specifications and
-                        standards.
-                    </div>
-                    <div className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] -right-24 origin-left" />
-                </div>
+
                 <div className="w-3/12 h-[320px] bg-gray-300 rounded-md relative">
                     <div className="flex items-center justify-center pt-8 gap-5 text-xl font-bold uppercase font-sans text-gray-800">
                         <Logistics />
