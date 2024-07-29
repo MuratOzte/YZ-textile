@@ -37,12 +37,6 @@ const NewBoxes = () => {
                         complete collections. For those needing design
                         assistance, our dedicated team provides expert support.
                     </div>
-                    <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: isInView ? 96 : 0 }}
-                        transition={{ duration: 0.8, delay: 0.1 }}
-                        className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] left-[380px] origin-center"
-                    />
                 </motion.div>
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -63,12 +57,6 @@ const NewBoxes = () => {
                         customers' designs. Also for our customers who require
                         design support, we assist with our design team.
                     </div>
-                    <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: isInView ? 96 : 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] left-[380px] origin-center"
-                    />
                 </motion.div>
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -97,12 +85,7 @@ const NewBoxes = () => {
                         sourcing from Turkey even for those not seeking contract
                         sewing services.
                     </div>
-                    <motion.div
-                        initial={{ height: 0 }}
-                        animate={{ height: isInView ? 64 : 0 }}
-                        transition={{ duration: 0.8, delay: 0.35 }}
-                        className="absolute w-[6px] shadow-lg bg-slate-300 left-[50%] -bottom-16 origin-top"
-                    />
+
                 </motion.div>
             </div>
             {/*second row*/}
@@ -127,16 +110,6 @@ const NewBoxes = () => {
                         ensure adherence to our clients' specifications and
                         standards.
                     </div>
-                    <motion.div
-                        initial={{ opacity: 0, width: 0 }}
-                        animate={
-                            isInView && !isAnimated
-                                ? { opacity: 1, width: 96 }
-                                : { opacity: 0, width: 0 }
-                        }
-                        transition={{ duration: 0.8, delay: 0.5 }}
-                        className="absolute w-24 h-[6px] shadow-lg bg-slate-300 top-[50%] -right-24 origin-right"
-                    />
                 </motion.div>
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -160,12 +133,6 @@ const NewBoxes = () => {
                         printing, embroidery, and personalized labels and
                         packaging.
                     </div>
-                    <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: isInView ? 96 : 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        className="absolute w-24 h-[6px] shadow-lg  bg-slate-300 top-[50%] -right-24 origin-center"
-                    />
                 </motion.div>
 
                 <motion.div
