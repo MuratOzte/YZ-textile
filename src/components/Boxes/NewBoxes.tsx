@@ -85,7 +85,6 @@ const NewBoxes = () => {
                         sourcing from Turkey even for those not seeking contract
                         sewing services.
                     </div>
-
                 </motion.div>
             </div>
             {/*second row*/}
