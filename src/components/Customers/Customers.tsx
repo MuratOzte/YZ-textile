@@ -1,5 +1,5 @@
 const Customers = () => {
-    return <div>Merhaba</div>
+    return <div>Selam</div>
 }
  
 export default Customers;
