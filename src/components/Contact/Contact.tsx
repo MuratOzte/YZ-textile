@@ -1,9 +1,9 @@
 import { CiMail } from 'react-icons/ci';
-import { IoCallOutline } from 'react-icons/io5';
+import { FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
     return (
-        <div className="bg-gray-100 p-8 rounded-lg shadow-lg max-w-4xl mx-auto mt-16">
+        <div className="bg-gray-100 p-8 rounded-lg shadow-lg max-w-4xl mx-auto mt-16 mb-6">
             <div className="text-center mb-8">
                 <h1 className="text-3xl font-semibold text-gray-800 mb-2">
                     Contact
@@ -24,12 +24,12 @@ const Contact = () => {
                     </a>
                 </div>
                 <div className="flex items-center">
-                    <IoCallOutline className="text-3xl text-gray-800 mr-3" />
+                    <FaWhatsapp className="text-3xl text-gray-800 mr-3" />
                     <a
-                        href="tel:+1234567890"
+                        href="https://wa.me/905313749574?text=Hello, I want to get information about clothing production"
                         className="text-lg text-gray-800 hover:text-gray-600"
                     >
-                        +1 (234) 567-890
+                        +90 531 374 95 74
                     </a>
                 </div>
             </div>
