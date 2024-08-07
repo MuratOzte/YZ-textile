@@ -4,26 +4,20 @@ import Image from 'next/image';
 
 import Slide1 from '@/assets/slide/slide1.jpeg';
 import Slide2 from '@/assets/slide/slide2.jpeg';
-//redux
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@/store/store';
-import uiSlice from '@/store/slices/uiSlice';
 
 const About = () => {
     const [isInit, setIsInit] = useState(true);
     const [aboutAnimated, setAboutAnimated] = useState(false);
     const [processAnimated, setProcessAnimated] = useState(false);
-    const ui = useSelector((state: RootState) => state.ui);
-    const dispatch = useDispatch();
 
     const container = useRef(null);
-    const isInView = useInView(container);
+    const isInView = useInView(container, { once: true });
 
     const aboutRef = useRef(null);
-    const isAboutInView = useInView(aboutRef);
+    const isAboutInView = useInView(aboutRef, { once: true });
 
     const processRef = useRef(null);
-    const isProcessInView = useInView(processRef);
+    const isProcessInView = useInView(processRef, { once: true });
 
     useEffect(() => {
         if (isInit && isInView) {

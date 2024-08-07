@@ -13,7 +13,7 @@ import { motion, useInView } from 'framer-motion';
 const NewBoxes = () => {
     const [isAnimated, setIsAnimated] = useState(false);
     const ref = useRef(null);
-    const isInView = useInView(ref);
+    const isInView = useInView(ref, { once: true });
 
     return (
         <div ref={ref}>
