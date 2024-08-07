@@ -1,5 +1,11 @@
+import MapChart from './MapChart';
+
 const Customers = () => {
-    return <div>Deneme</div>
-}
- 
+    return (
+        <div>
+            <MapChart />
+        </div>
+    );
+};
+
 export default Customers;
