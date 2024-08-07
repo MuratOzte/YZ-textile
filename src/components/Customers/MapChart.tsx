@@ -24,16 +24,15 @@ export default function MapChart() {
     };
 
     return (
-        <div className="w-full h-screen">
+        <div className="w-1/2 h-[500px] overflow-hidden pl-30 rounded-tr-md rounded-br-md mt-20 border-gray-400 border-2 border-l-0">
             <WorldMap
-                type="marker"
-                color="black"
-                size="xxl"
+                color="gray"
+                size={1000}
                 data={data}
                 backgroundColor="white"
                 tooltipBgColor="black"
                 tooltipTextColor="white"
-                borderColor="gray"
+                borderColor="black"
                 tooltipTextFunction={(context) => {
                     if (countryNames[context.countryCode]) {
                         return countryNames[context.countryCode];

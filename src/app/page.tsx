@@ -11,10 +11,10 @@ export default function Home() {
     return (
         <>
             <Nav />
-            {/* <ImageCarousel /> */}
-            {/* <About /> */}
+            <ImageCarousel />
+            <About />
             {/* <Boxes /> */}
-            {/* <NewBoxes /> */}
+            <NewBoxes />
             <Customers />
         </>
     );
