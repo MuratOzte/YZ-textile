@@ -168,6 +168,30 @@ const About = () => {
                                 transition={{ duration: 1, delay: 0.2 }}
                                 className="text-5xl"
                             >
+                                What do we produce?
+                            </motion.h1>
+                            <motion.p
+                                initial={{ y: 20, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 1, delay: 0.3 }}
+                                className="w-2/3 text-slate-500"
+                            >
+                                As YZ Textile, we produce high quality hoodies,
+                                sweatshirts, sweatpants, tracksuits and t-shirts
+                                in desired patterns and sizes.
+                            </motion.p>
+                        </div>
+                    )}
+                </AnimatePresence>
+                <AnimatePresence>
+                    {(processAnimated || isProcessInView) && (
+                        <div className="bg-transparent text-black flex justify-center flex-col text-center items-center gap-5 mb-20">
+                            <motion.h1
+                                initial={{ y: -20, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 1, delay: 0.2 }}
+                                className="text-5xl"
+                            >
                                 SERVICES & PROCESSES
                             </motion.h1>
                             <motion.p
@@ -182,30 +206,6 @@ const About = () => {
                                 ensuring seamless support and efficiency, so you
                                 can streamline your operations without the
                                 hassle of multiple suppliers for each step.
-                            </motion.p>
-                        </div>
-                    )}
-                </AnimatePresence>
-                <AnimatePresence>
-                    {(processAnimated || isProcessInView) && (
-                        <div className="bg-transparent text-black flex justify-center flex-col text-center items-center gap-5 mb-20">
-                            <motion.h1
-                                initial={{ y: -20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 1, delay: 0.2 }}
-                                className="text-5xl"
-                            >
-                                What do we produce?
-                            </motion.h1>
-                            <motion.p
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 1, delay: 0.3 }}
-                                className="w-2/3 text-slate-500"
-                            >
-                                As YZ Textile, we produce high quality hoodies,
-                                sweatshirts, sweatpants, tracksuits and t-shirts
-                                in desired patterns and sizes.
                             </motion.p>
                         </div>
                     )}

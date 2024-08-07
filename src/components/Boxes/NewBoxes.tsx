@@ -97,7 +97,7 @@ const NewBoxes = () => {
                             : { opacity: 0, scale: 0.9 }
                     }
                     transition={{ duration: 0.8, delay: 0.55 }}
-                    className="w-3/12 h-[320px] bg-gray-200 rounded-md relative"
+                    className="w-3/12 h-[320px] bg-gray-300 rounded-md relative"
                 >
                     <div className="flex items-center justify-center pt-8 gap-5 text-xl font-bold uppercase font-sans text-gray-800">
                         <Quality />
@@ -118,13 +118,13 @@ const NewBoxes = () => {
                             : { opacity: 0, scale: 0.9 }
                     }
                     transition={{ duration: 0.8, delay: 0.45 }}
-                    className="w-3/12 h-[320px] bg-gray-300 rounded-md relative"
+                    className="w-3/12 h-[320px] bg-gray-200 rounded-md relative"
                 >
                     <div className="flex items-center justify-center pt-8 gap-5 text-xl font-bold uppercase font-sans text-gray-800">
                         <Production />
                         <h1>Production</h1>
                     </div>
-                    <div className="mt-8 mx-5 ml-8 text-gray-600 text-center text-base">
+                    <div className="mt-4 mx-5 ml-8 text-gray-600 text-center text-base">
                         Upon finalizing designs and fabric selection, we
                         commence manufacturing. Operating our cutting and sewing
                         workshops ensures end-to-end control over the entire
