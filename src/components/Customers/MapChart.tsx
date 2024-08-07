@@ -26,7 +26,7 @@ export default function MapChart() {
     return (
         <div className="w-1/2 h-[500px] overflow-hidden pl-30 rounded-tr-md rounded-br-md mt-20 border-gray-400 border-2 border-l-0">
             <WorldMap
-                color="gray"
+                color="#1f2937"
                 size={1000}
                 data={data}
                 backgroundColor="white"

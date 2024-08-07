@@ -5,6 +5,7 @@ import NewBoxes from '@/components/Boxes/NewBoxes';
 import Customers from '@/components/Customers/Customers';
 import Nav from '@/components/Nav/Nav';
 import ImageCarousel from '@/components/Slide/ImageCarousel';
+import Sustainability from '@/components/Sustainability/Sustainability';
 import { useEffect } from 'react';
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
             {/* <Boxes /> */}
             <NewBoxes />
             <Customers />
+            <Sustainability />
         </>
     );
 }
