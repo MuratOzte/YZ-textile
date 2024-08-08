@@ -19,10 +19,8 @@ export default function Home() {
             const currentScrollPos = window.pageYOffset;
 
             if (currentScrollPos > prevScrollPos) {
-                // Aşağı kaydırma
                 setIsNavVisible(false);
             } else {
-                // Yukarı kaydırma
                 setIsNavVisible(true);
             }
 
@@ -37,7 +35,7 @@ export default function Home() {
     }, [prevScrollPos]);
 
     return (
-        <>
+        <div className='scroll-smooth'>
             <motion.div
                 initial={{ y: 0 }}
                 animate={{ y: isNavVisible ? 0 : '-100%' }}
@@ -52,12 +50,22 @@ export default function Home() {
                 <Nav />
             </motion.div>
             <ImageCarousel />
-            <About />
+            <div id="about">
+                <About />
+            </div>
             {/* <Boxes /> */}
-            <NewBoxes />
-            <Customers />
-            <Sustainability />
-            <Contact />
-        </>
+            <div id="services">
+                <NewBoxes />
+            </div>
+            <div id="customers">
+                <Customers />
+            </div>
+            <div id="sustainability">
+                <Sustainability />
+            </div>
+            <div id="contact">
+                <Contact />
+            </div>
+        </div>
     );
 }
