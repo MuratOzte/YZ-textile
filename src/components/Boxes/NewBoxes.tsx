@@ -17,7 +17,7 @@ const NewBoxes = () => {
 
     return (
         <div ref={ref}>
-            <div className="flex justify-evenly w-full">
+            <div className="flex justify-evenly w-full mt-20">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={
