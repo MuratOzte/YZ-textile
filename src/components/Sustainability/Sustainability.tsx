@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Sustaibability from '@/assets/slide/sustainability.jpeg';
+import Sustaibability from '@/assets/sustainability/sustainability.jpeg';
 
 const Sustainability = () => {
     return (
