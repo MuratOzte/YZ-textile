@@ -1,14 +1,17 @@
-import { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, motion, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 
 import Slide1 from '@/assets/slide/slide1.jpeg';
 import Slide2 from '@/assets/slide/slide2.jpeg';
 import Slide4 from '@/assets/slide/slide4.jpeg';
 import Slide5 from '@/assets/slide/slide5.jpeg';
+import { RootState } from '@/store/store';
+import { useSelector } from 'react-redux';
 
 const About = () => {
     const [isInit, setIsInit] = useState(true);
+    const ui = useSelector((state: RootState) => state.ui);
 
     const container = useRef(null);
     const isInView = useInView(container, { once: true });
@@ -25,16 +28,20 @@ const About = () => {
         }
     }, [isInView]);
 
-
     return (
         <div className="flex gap-20 flex-col">
             <motion.div className="flex justify-center flex-col bg-white">
                 <div className="flex flex-col items-center">
                     <div ref={container}>
-                        {isInView && (
+                        {(isInView || ui.isNavClicked) && (
                             <div>
                                 <motion.h1
-                                    initial={{ width: isInit ? 0 : '100%' }}
+                                    initial={{
+                                        width:
+                                            isInit || !ui.isNavClicked
+                                                ? 0
+                                                : '100%',
+                                    }}
                                     animate={{ width: '100%' }}
                                     transition={{
                                         duration: 1.5,
@@ -52,7 +59,7 @@ const About = () => {
                         )}
                     </div>
                     <div className="flex justify-center mt-16" ref={aboutRef}>
-                        {isAboutInView && (
+                        {(isAboutInView || ui.isNavClicked) && (
                             <div>
                                 <div className="w-full flex justify-center items-center gap-5">
                                     <motion.p
@@ -143,7 +150,7 @@ const About = () => {
                 </div>
                 <div className="flex flex-col items-center">
                     <div className="flex justify-center mt-16" ref={aboutRef}>
-                        {isAboutInView && (
+                        {(isAboutInView || ui.isNavClicked) && (
                             <div>
                                 <div className="w-full flex justify-center items-center gap-5">
                                     <motion.p

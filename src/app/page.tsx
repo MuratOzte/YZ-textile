@@ -35,7 +35,7 @@ export default function Home() {
     }, [prevScrollPos]);
 
     return (
-        <div className='scroll-smooth'>
+        <div className="scroll-smooth">
             <motion.div
                 initial={{ y: 0 }}
                 animate={{ y: isNavVisible ? 0 : '-100%' }}

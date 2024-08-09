@@ -1,6 +1,16 @@
 import CatalogButton from './CatalogButton';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '@/store/store';
+import uiSlice from '@/store/slices/uiSlice';
 
 const Nav = () => {
+    const ui = useSelector((state: RootState) => state.ui);
+    const dispatch = useDispatch();
+
+    const toggleNav = () => {
+        dispatch(uiSlice.actions.toggleNav(true));
+    };
+
     return (
         <nav className="h-16 sticky top-0 flex justify-between items-center px-14 bg-gradient-to-b bg-white shadow-md z-50">
             <div className="flex gap-2 text-3xl cursor-pointer">
@@ -11,16 +21,16 @@ const Nav = () => {
                 <li className="cursor-pointer">
                     <a href="#about">About</a>
                 </li>
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={toggleNav}>
                     <a href="#services">Services & Processes</a>
                 </li>
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={toggleNav}>
                     <a href="#customers">Customers</a>
                 </li>
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={toggleNav}>
                     <a href="#sustainability">Sustainability</a>
                 </li>
-                <li className="cursor-pointer">
+                <li className="cursor-pointer" onClick={toggleNav}>
                     <a href="#contact">Contact</a>
                 </li>
                 <CatalogButton />
