@@ -21,11 +21,11 @@ const Filter: React.FC<FilterProps> = ({ selected, setSelected }) => {
     };
 
     return (
-        <div className="bg-gray-200 px-6 py-3 w-fit flex justify-center gap-6 rounded-xl shadow-md select-none">
+        <div className="bg-gray-300 px-6 py-3 w-fit flex justify-center gap-6 rounded-xl shadow-md select-none">
             <div
                 className={`flex items-center px-5 py-2 rounded-lg gap-3 cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 ${
                     selected === 'Man' || selected === 'Both'
-                        ? 'bg-gray-500 text-white'
+                        ? 'bg-black text-white'
                         : 'bg-gray-50 text-gray-800'
                 }`}
                 onClick={() => handleClick('Man')}
@@ -36,7 +36,7 @@ const Filter: React.FC<FilterProps> = ({ selected, setSelected }) => {
             <div
                 className={`flex items-center px-5 py-2 rounded-lg gap-3 cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 ${
                     selected === 'Woman' || selected === 'Both'
-                        ? 'bg-gray-500 text-white'
+                        ? 'bg-black text-white'
                         : 'bg-gray-50 text-gray-800'
                 }`}
                 onClick={() => handleClick('Woman')}
