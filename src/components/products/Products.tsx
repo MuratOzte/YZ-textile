@@ -55,12 +55,12 @@ interface ProductsProps {
 
 const Products: React.FC<ProductsProps> = ({ selected }) => {
     const menImages = [
-        Men1,
+        Men6,
         Men2,
         Men3,
         Men4,
         Men5,
-        Men6,
+        Men1,
         Men7,
         Men8,
         Men9,
@@ -106,44 +106,64 @@ const Products: React.FC<ProductsProps> = ({ selected }) => {
     const renderImages = () => {
         if (selected === 'Man') {
             return menImages.map((img, index) => (
-                <Image
+                <div
                     key={index}
-                    src={img}
-                    alt={`Man ${index + 1}`}
-                    width={500}
-                    height={500}
-                />
+                    className="p-2 flex justify-center items-center"
+                >
+                    <Image
+                        src={img}
+                        alt={`Man ${index + 1}`}
+                        width={400}
+                        height={400}
+                        className="bg-white rounded-md"
+                    />
+                </div>
             ));
         } else if (selected === 'Woman') {
             return womenImages.map((img, index) => (
-                <Image
+                <div
                     key={index}
-                    src={img}
-                    alt={`Woman ${index + 1}`}
-                    width={500}
-                    height={500}
-                />
+                    className="p-2 flex justify-center items-center"
+                >
+                    <Image
+                        src={img}
+                        alt={`Woman ${index + 1}`}
+                        width={400}
+                        height={400}
+                        className="bg-white rounded-md"
+                    />
+                </div>
             ));
         } else if (selected === 'Both') {
             return (
                 <>
                     {menImages.map((img, index) => (
-                        <Image
+                        <div
                             key={`man-${index}`}
-                            src={img}
-                            alt={`Man ${index + 1}`}
-                            width={500}
-                            height={500}
-                        />
+                            className="p-2 flex justify-center items-center"
+                        >
+                            <Image
+                                src={img}
+                                alt={`Man ${index + 1}`}
+                                width={400}
+                                height={400}
+                                className="bg-white rounded-md shadow-md"
+                            />
+                        </div>
                     ))}
                     {womenImages.map((img, index) => (
-                        <Image
+                        <div
                             key={`woman-${index}`}
-                            src={img}
-                            alt={`Woman ${index + 1}`}
-                            width={500}
-                            height={500}
-                        />
+                            className="p-2 flex justify-center items-center"
+                        >
+                            <Image
+                                src={img}
+                                alt={`Woman ${index + 1}`}
+                                width={400}
+                                height={400}
+                                className="bg-white rounded-md shadow-md"
+                            />
+                        </div>
                     ))}
                 </>
             );

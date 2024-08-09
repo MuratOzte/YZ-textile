@@ -21,7 +21,7 @@ const Filter: React.FC<FilterProps> = ({ selected, setSelected }) => {
     };
 
     return (
-        <div className="bg-gray-300 px-6 py-3 w-fit flex justify-center gap-6 rounded-xl shadow-md select-none">
+        <div className="bg-gray-300 px-6 py-3 w-fit flex justify-center gap-6 rounded-xl shadow-md select-none mb-8">
             <div
                 className={`flex items-center px-5 py-2 rounded-lg gap-3 cursor-pointer transform transition-transform duration-200 ease-out hover:scale-105 ${
                     selected === 'Man' || selected === 'Both'
