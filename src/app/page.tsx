@@ -15,6 +15,9 @@ export default function Home() {
     const [isNavVisible, setIsNavVisible] = useState(true);
 
     useEffect(() => {
+        // Ensure this code only runs in the browser
+        if (typeof window === 'undefined') return;
+
         const handleScroll = () => {
             const currentScrollPos = window.pageYOffset;
 
@@ -32,7 +35,7 @@ export default function Home() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [prevScrollPos]);
+    }, [prevScrollPos]); // Remove `window` from the dependency array
 
     return (
         <div className="scroll-smooth">
