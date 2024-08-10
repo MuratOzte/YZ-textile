@@ -12,13 +12,13 @@ const Nav = () => {
     };
 
     return (
-        <nav className="h-16 sticky top-0 flex justify-evenly w-screen items-center md:px-14 bg-gradient-to-b bg-white shadow-md z-50 md:mr-0 px-4">
+        <nav className="h-16 sticky top-0 flex justify-evenly w-screen items-center md:px-14 bg-gradient-to-b bg-white shadow-md z-50 md:mr-0 pl-4">
             <div className="flex gap-2 text-2xl md:text-3xl cursor-pointer">
                 <span className="font-bold">YZ</span>
                 <span>Textile</span>
             </div>
             <div
-                className="tham tham-e-spin tham-w-6 duration-200 md:hidden flex mx-4"
+                className="tham tham-e-spin tham-w-6 duration-200 md:hidden flex mx-4 ml-8"
                 onClick={(e) => {
                     e.currentTarget.classList.toggle('tham-active');
                 }}
@@ -56,7 +56,7 @@ const Nav = () => {
                     <a href="#contact">Contact</a>
                 </li>
             </ul>
-            <div className="w-[160px]">
+            <div className="w-[160px] flex justify-center">
                 <CatalogButton />
             </div>
         </nav>
