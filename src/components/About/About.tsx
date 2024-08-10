@@ -151,7 +151,7 @@ const About = () => {
                     <div className="flex justify-center mt-8 md:mt-16">
                         {(isAboutInView || ui.isNavClicked) && (
                             <div className="w-full flex flex-col md:flex-row justify-center items-center gap-5">
-                                <motion.p
+                                <motion.div
                                     initial={{ x: -20 }}
                                     animate={{
                                         x: 0,
@@ -171,7 +171,7 @@ const About = () => {
                                         tracksuits and t-shirts in desired
                                         patterns and sizes.
                                     </p>
-                                </motion.p>
+                                </motion.div>
                                 <motion.div
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{
@@ -218,7 +218,7 @@ const About = () => {
                                         className="object-cover"
                                     />
                                 </motion.div>
-                                <motion.p
+                                <motion.div
                                     initial={{ x: 20 }}
                                     animate={{
                                         x: 0,
@@ -242,7 +242,7 @@ const About = () => {
                                         hassle of multiple suppliers for each
                                         step.
                                     </p>
-                                </motion.p>
+                                </motion.div>
                             </div>
                         )}
                     </div>
