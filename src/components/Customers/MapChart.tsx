@@ -24,10 +24,10 @@ export default function MapChart() {
     };
 
     return (
-        <div className="w-1/2 h-[500px] overflow-hidden pl-30 rounded-tr-md rounded-br-md mt-20 border-gray-400 border-2 border-l-0">
+        <div className="w-full lg:w-1/2 h-[300px] lg:h-[500px] overflow-hidden pl-0 lg:pl-8 rounded-tr-md rounded-br-md mt-1 lg:mt-20 border-gray-400 border-2 lg:border-l-0">
             <WorldMap
                 color="#1f2937"
-                size={1000}
+                size={window.innerWidth < 768 ? 400 : 1000}
                 data={data}
                 backgroundColor="white"
                 tooltipBgColor="black"
