@@ -88,7 +88,7 @@ const NewBoxes = () => {
                 </motion.div>
             </div>
             {/* Second row */}
-            <div className="flex flex-col md:flex-row justify-evenly w-full mt-16 gap-8 md:gap-6">
+            <div className="flex flex-col md:flex-row justify-evenly w-full md:mt-16 mt-8 gap-8 md:gap-6">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={
