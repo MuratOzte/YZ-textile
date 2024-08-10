@@ -4,43 +4,27 @@ const CatalogButton = () => {
     return (
         <Link
             href="/catalog"
-            className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-black transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-300 group"
+            className="relative inline-flex items-center justify-center py-2 md:py-3 pl-4 pr-8 md:pr-12 overflow-hidden font-semibold text-black transition-all duration-150 ease-in-out rounded bg-gray-300 group w-2/3 md:w-auto text-sm md:text-base"
         >
-            <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-black group-hover:h-full"></span>
-            <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12 group-hover:text-white text-black">
-                <svg
-                    className="w-5 h-5 "
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                </svg>
-            </span>
-            <span className="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200 text-white">
-                <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                </svg>
-            </span>
-            <span className="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-white">
+            <span className="absolute inset-0 w-full h-full transition-transform duration-200 ease-out transform bg-black scale-x-0 group-hover:scale-x-100 origin-left"></span>
+            <span className="relative z-10 transition-colors duration-200 ease-in-out group-hover:text-white">
                 Catalog
+            </span>
+            <span className="absolute right-4 transition-transform duration-200 ease-out transform group-hover:translate-x-2 group-hover:text-white">
+                <svg
+                    className="w-4 h-4 md:w-5 md:h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                </svg>
             </span>
         </Link>
     );

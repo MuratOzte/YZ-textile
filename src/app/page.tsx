@@ -37,7 +37,7 @@ export default function Home() {
     return (
         <div className="scroll-smooth">
             <motion.div
-                initial={{ y: 0 }}
+                initial={{ y: '-100%' }}
                 animate={{ y: isNavVisible ? 0 : '-100%' }}
                 transition={{ duration: 0.3 }}
                 style={{
@@ -45,6 +45,7 @@ export default function Home() {
                     top: 0,
                     width: '100%',
                     zIndex: 1000,
+                    marginRight: 0,
                 }}
             >
                 <Nav />
