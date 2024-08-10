@@ -47,10 +47,6 @@ const Boxes = () => {
         }
     }, [scrollPosition]);
 
-    useEffect(() => {
-        console.log(isViewed);
-    }, [isViewed]);
-
     return (
         <div className="flex justify-center w-full mb-64 h-[2000px]">
             <div className="relative">

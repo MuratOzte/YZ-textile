@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 import {
     Men1,
@@ -103,7 +104,22 @@ const Products: React.FC<ProductsProps> = ({ selected }) => {
         Women14,
     ];
 
+    const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsLargeScreen(window.matchMedia('(min-width: 1024px)').matches);
+        };
+
+        handleResize(); // Check on mount
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const renderImages = () => {
+        const imageSize = isLargeScreen ? 500 : 300; // Adjust sizes based on screen size
+
         if (selected === 'Man') {
             return menImages.map((img, index) => (
                 <div
@@ -113,9 +129,9 @@ const Products: React.FC<ProductsProps> = ({ selected }) => {
                     <Image
                         src={img}
                         alt={`Man ${index + 1}`}
-                        width={400}
-                        height={400}
-                        className="bg-white rounded-md"
+                        width={imageSize}
+                        height={imageSize}
+                        className="bg-white rounded-md max-w-full h-auto"
                     />
                 </div>
             ));
@@ -128,9 +144,9 @@ const Products: React.FC<ProductsProps> = ({ selected }) => {
                     <Image
                         src={img}
                         alt={`Woman ${index + 1}`}
-                        width={400}
-                        height={400}
-                        className="bg-white rounded-md"
+                        width={imageSize}
+                        height={imageSize}
+                        className="bg-white rounded-md max-w-full h-auto"
                     />
                 </div>
             ));
@@ -145,9 +161,9 @@ const Products: React.FC<ProductsProps> = ({ selected }) => {
                             <Image
                                 src={img}
                                 alt={`Man ${index + 1}`}
-                                width={400}
-                                height={400}
-                                className="bg-white rounded-md shadow-md"
+                                width={imageSize}
+                                height={imageSize}
+                                className="bg-white rounded-md shadow-md max-w-full h-auto"
                             />
                         </div>
                     ))}
@@ -159,9 +175,9 @@ const Products: React.FC<ProductsProps> = ({ selected }) => {
                             <Image
                                 src={img}
                                 alt={`Woman ${index + 1}`}
-                                width={400}
-                                height={400}
-                                className="bg-white rounded-md shadow-md"
+                                width={imageSize}
+                                height={imageSize}
+                                className="bg-white rounded-md shadow-md max-w-full h-auto"
                             />
                         </div>
                     ))}
@@ -170,7 +186,11 @@ const Products: React.FC<ProductsProps> = ({ selected }) => {
         }
     };
 
-    return <div className="grid grid-cols-3 gap-4">{renderImages()}</div>;
+    return (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-2 mx-2">
+            {renderImages()}
+        </div>
+    );
 };
 
 export default Products;
