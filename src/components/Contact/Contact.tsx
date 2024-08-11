@@ -17,10 +17,10 @@ const Contact = () => {
                 <div className="flex items-center mb-4 sm:mb-0 space-x-3">
                     <CiMail className="text-3xl text-gray-800" />
                     <a
-                        href="mailto:email@example.com"
+                        href="mailto:info@yztextiles.com"
                         className="text-lg text-gray-800 hover:text-gray-600"
                     >
-                        email@example.com
+                        info@yztextiles.com
                     </a>
                 </div>
                 <div className="flex items-center space-x-3">
