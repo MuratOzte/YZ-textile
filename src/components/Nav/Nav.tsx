@@ -83,9 +83,15 @@ const Nav = () => {
                         }}
                         className="absolute top-16 left-0 w-full bg-white shadow-lg z-40 md:hidden overflow-hidden flex justify-center"
                     >
-                        <ul className="flex flex-col items-start p-4 space-y-4 items-center">
+                        <ul className="flex flex-col p-4 space-y-4 items-center">
                             <li className="cursor-pointer">
-                                <a href="#about" className='text-center' >About</a>
+                                <a
+                                    href="#about"
+                                    className="text-center"
+                                    onClick={toggleNav}
+                                >
+                                    About
+                                </a>
                             </li>
                             <li className="cursor-pointer" onClick={toggleNav}>
                                 <a href="#services">Services & Processes</a>
