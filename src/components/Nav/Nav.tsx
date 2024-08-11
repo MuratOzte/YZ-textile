@@ -2,13 +2,21 @@ import CatalogButton from './CatalogButton';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/store/store';
 import uiSlice from '@/store/slices/uiSlice';
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const Nav = () => {
     const ui = useSelector((state: RootState) => state.ui);
+    const [isMenuOpened, setIsMenuOpened] = useState(false);
     const dispatch = useDispatch();
 
     const toggleNav = () => {
         dispatch(uiSlice.actions.toggleNav(true));
+        setIsMenuOpened(false);
+    };
+
+    const handleMenuToggle = () => {
+        setIsMenuOpened(!isMenuOpened);
     };
 
     return (
@@ -18,9 +26,12 @@ const Nav = () => {
                 <span>Textile</span>
             </div>
             <div
-                className="tham tham-e-spin tham-w-6 duration-200 md:hidden flex mx-4 ml-8"
+                className={`tham tham-e-spin tham-w-6 duration-200 md:hidden flex mx-4 ml-8 ${
+                    isMenuOpened ? 'tham-active' : ''
+                }`}
                 onClick={(e) => {
                     e.currentTarget.classList.toggle('tham-active');
+                    handleMenuToggle();
                 }}
             >
                 <div className="tham-box">
@@ -59,6 +70,39 @@ const Nav = () => {
             <div className="w-[160px] flex justify-center">
                 <CatalogButton />
             </div>
+
+            {/* Dropdown Menu */}
+            <AnimatePresence>
+                {isMenuOpened && (
+                    <motion.div
+                        initial={{ height: 0 }}
+                        animate={{ height: 'auto' }}
+                        exit={{ height: 0 }}
+                        transition={{
+                            duration: 0.3,
+                        }}
+                        className="absolute top-16 left-0 w-full bg-white shadow-lg z-40 md:hidden overflow-hidden"
+                    >
+                        <ul className="flex flex-col items-start p-4 space-y-4">
+                            <li className="cursor-pointer">
+                                <a href="#about">About</a>
+                            </li>
+                            <li className="cursor-pointer" onClick={toggleNav}>
+                                <a href="#services">Services & Processes</a>
+                            </li>
+                            <li className="cursor-pointer" onClick={toggleNav}>
+                                <a href="#customers">Customers</a>
+                            </li>
+                            <li className="cursor-pointer" onClick={toggleNav}>
+                                <a href="#sustainability">Sustainability</a>
+                            </li>
+                            <li className="cursor-pointer" onClick={toggleNav}>
+                                <a href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 };
