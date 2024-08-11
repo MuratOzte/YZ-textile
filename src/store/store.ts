@@ -6,6 +6,7 @@ export const store = configureStore({
     reducer: {
         ui: uiSlice.reducer,
     },
+    devTools: false,
 });
 
 export type RootState = ReturnType<typeof store.getState>;
